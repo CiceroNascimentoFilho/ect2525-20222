@@ -1,14 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import Constants from 'expo-constants';
+import {FontAwesome5} from '@expo/vector-icons';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.texto}>Hello Word!</Text>
-      <Text style={styles.texto}> ECT2525</Text>
-      <Image style={styles.imagem}
-        source={require('./assets/imagens/Pernalonga.jpeg')}></Image>
+      <View style={styles.header}>
+        <Image style={styles.ufrngram} source={require('./assets/imagens/ufrngram.png')}/>
+        <FontAwesome5 name="paper-plane" size={20} color="black"/>
+      </View>
+      <View style={styles.stories}>
+        <View styles={styles.story}>
+
+        </View>
+        <View styles={styles.story}>
+
+        </View>
+
+      </View>
     </View>
   );
 }
@@ -17,11 +29,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f00',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: Constants.statusBarHeight,
   },
-  texto: {
-    fontSize: 50,
-    color: "#fff"
-    }
+ header: {
+  flexDiretion: 'row',
+  padding: 10,
+  height: 50,
+  backgroundColor: '#0f0',
+  alignItens: 'center',
+  justifyContent: 'space-between',
+ },
+ ufrngram: {
+  height: 25,
+  width: 110,
+ },
+ stories: {
+  flexDiretion: 'row',
+  height: 90,
+  backgroundColor: '#00f',
+ },
+ story: {
+  height: 90,
+  width: 90,
+  backgroundColor: '#f00',
+  },
+
 });
