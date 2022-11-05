@@ -7,7 +7,7 @@ export default function Header() {
      return (
         <View style={styles.header}>
         <Image style={styles.ufrngram} source={require('../assets/imagens/ufrngram.png')}/>
-        <FontAwesome5 name="paper-plane" size={24} color="black"/>
+        <FontAwesome5 name="paper-plane" size={24} color="black" onPress={() => Navigation.navigate('ChatList')}/>
       </View>
     );
 }
